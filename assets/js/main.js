@@ -5,8 +5,11 @@ var studente = {
   età: '31'
 }
 
-// STAMPO A SCHERMO TUTTE LE PROPRIETA'
+// STAMPO A SCHERMO TUTTE LE PROPRIETA' DELL'OGGETTO STUDENTE
 console.log(studente);
+for (var key in studente) {
+  console.log(key, studente[key]);
+}
 
 // CREO UN ARRAY DI OGGETTI DI STUDENTI
 var studenti = [
@@ -34,10 +37,37 @@ var studenti = [
   },
 
   {
-    nome: 'Giuditta',
-    cognome: 'Marino',
-    età: '31'
+    nome: 'Jessica',
+    cognome: 'Verdi',
+    età: '26'
   }
 ]
 
 console.log(studenti);
+
+// STAMPO PER OGNI STUDENTE NOME E COGNOME
+for (var i = 0; i < studenti.length; i++) {
+  console.log(studenti[i]['nome'], studenti[i]['cognome']);
+}
+
+aggiungiStudente();
+
+// CREO TRE PROMPT IN CUI FACCIO INSERIRE ALL'UTENTE NOME COGNOME ED ETA E INSERISCO L'OGGETTO NELL'ARRAY DI STUDENTI
+function aggiungiStudente(){
+  // CREO TRE PROMPT IN CUI FACCIO INSERIRE ALL'UTENTE NOME COGNOME ED ETA
+  var nome = prompt('Inserisci il nome dello studente');
+  var cognome = prompt('Inserisci il cognome dello studente');
+  var eta = prompt("inserisci l'età dello studente");
+
+  // CREO UN OGGETTO NUOVOSTUDENTE CHE CONTIENE LE PROPRIETA' INSERITE TRAMITE PROMPT
+  var nuovoStudente = {
+    nome: nome,
+    cognome: cognome,
+    età: eta
+  }
+  console.log(nuovoStudente)
+
+  // PUSHO NELL'ARRAY IL NUOVO OGGETTO
+  studenti.push(nuovoStudente);
+  console.log(studenti);
+}
