@@ -4,13 +4,16 @@ $(document).ready(function() {
   var studente = {
     nome: 'Giuditta',
     cognome: 'Marino',
-    età: '31'
+    eta: '31'
   }
 
   // STAMPO A SCHERMO TUTTE LE PROPRIETA' DELL'OGGETTO STUDENTE
   console.log(studente);
   for (var key in studente) {
     console.log(key, studente[key]);
+    var info = $('#properties').html();
+    info += "<li>" + key + ' ' + studente[key] + "</li>";
+    $('#properties').html(info);
   }
 
   // CREO UN ARRAY DI OGGETTI DI STUDENTI
@@ -18,30 +21,30 @@ $(document).ready(function() {
     {
       nome: 'Giuditta',
       cognome: 'Marino',
-      età: '31'
+      eta: '31'
     },
     {
       nome: 'Barbara',
       cognome: 'Rossi',
-      età: '40'
+      eta: '40'
     },
 
     {
       nome: 'Antonia',
       cognome: 'Bianchi',
-      età: '29'
+      eta: '29'
     },
 
     {
       nome: 'Alessia',
       cognome: 'Neri',
-      età: '34'
+      eta: '34'
     },
 
     {
       nome: 'Jessica',
       cognome: 'Verdi',
-      età: '26'
+      eta: '26'
     }
   ]
 
@@ -50,6 +53,7 @@ $(document).ready(function() {
   // STAMPO PER OGNI STUDENTE NOME E COGNOME
   for (var i = 0; i < studenti.length; i++) {
     console.log(studenti[i]['nome'], studenti[i]['cognome']);
+    $('#lista').append('<li>' + studenti[i].nome + ' ' + studenti[i].cognome + '</li>')
   }
 
   // AL CLICK SUL BUTTON AGGIUNGI
@@ -71,6 +75,6 @@ $(document).ready(function() {
 
     console.log(studenti);
   })
-  
+
 
 })
